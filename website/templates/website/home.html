@@ -7,7 +7,15 @@
 
 {% if user.is_authenticated %}
   
-<h1>Hello Wrold</h1>
+<h1>Records....</h1>
+
+{% if records %}
+
+{% for record in records %}
+{{record}}  <br>
+{% endfor %}
+
+{% endif %}
 
 {% else %}
 
