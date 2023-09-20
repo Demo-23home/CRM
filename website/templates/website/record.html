@@ -1,0 +1,29 @@
+{% extends "website/base.html" %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+
+
+<h1>Record</h1>
+{{ customer_record.first_name }} {{ customer_record.last_name }} <br>
+
+    
+    {{ customer_record.email }}<br>
+    {{ customer_record.phone_number }}<br>
+    {{ customer_record.address }}<br>
+    {{ customer_record.city }}<br>
+    {{ customer_record.state }}<br>
+    {{ customer_record.zip_code }}<br>
+    {{ customer_record.created_at }}<br>
+    {{customer_record.id}}<br>
+
+{% endblock content %}
+
+
+
+
+
+

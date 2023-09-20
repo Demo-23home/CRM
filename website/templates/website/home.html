@@ -1,5 +1,10 @@
 {% extends 'website/base.html' %}
 
+{% block title %}
+  {{title}}
+{% endblock title %}
+
+
 {% block content %}
 
 
@@ -34,7 +39,7 @@
 			<td>{{ record.state }}</td>
 			<td>{{ record.zip_code }}</td>
 			<td>{{ record.created_at }}</td>
-            <td>{{record.id}}</td>
+            <td><a href="{% url 'website:customer_record' record.id %}"> {{record.id}}</a></td>
 		</tr>
 	{% endfor %}
 
@@ -54,7 +59,7 @@
 <h1>Login</h1>
 <br/>
 
-<form method="POST" action="{% url 'home' %}">
+<form method="POST" action="{% url 'website:home' %}">
 	{% csrf_token %}
 
   <div class="mb-3">

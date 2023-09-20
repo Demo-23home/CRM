@@ -11,4 +11,5 @@ urlpatterns = [
     # path('',login,name='login'),
     path('logout/',user_logout,name='logout'),
     path('register/',register,name='register'),
+    path('record/<int:pk>',customer_record,name='customer_record'),
 ]

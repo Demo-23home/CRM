@@ -25,7 +25,7 @@ def home(request):
             messages.success(request, "Incorrect username or password")
             return redirect('website:home')
     else:
-        return render(request, 'website/home.html', {'home':'home', 'records':records})
+        return render(request, 'website/home.html', {'title':'Home Page', 'records':records})
 
 
 
@@ -60,11 +60,18 @@ def register(request):
     else:
         form = SignUpForm()
 
-        return render(request,'website/register.html',{'form':form,})
-    return render(request,'website/register.html',{'form':form,})
-
+        return render(request,'website/register.html',{'title':'Register Page','form':form,})
+    return render(request,'website/register.html',{'title':'Register Page','form':form,})
 
 
  
 
 
+def customer_record(request, pk):
+    if request.user.is_authenticated:
+        customer_record = Record.objects.get(id = pk)
+        return render(request,'website/record.html',{'customer_record':customer_record})
+    else:
+        messages.success("You Must Be logged In to View these Records")
+        return redirect('website:home')
+    
