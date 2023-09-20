@@ -1,24 +1,39 @@
 {% extends "website/base.html" %}
 
 {% block title %}
-
+{{customer_record.first_name}}'s Record
 {% endblock title %}
 
 {% block content %}
 
 
-<h1>Record</h1>
-{{ customer_record.first_name }} {{ customer_record.last_name }} <br>
+<h1>{{customer_record.first_name}}'s Record</h1>
+<div class="card">
+    <div class="card-header">
+        {{ customer_record.first_name }} {{ customer_record.last_name }}
+    </div>
+    <div class="card-body">
+
+      <p class="card-text">    
+       <strong>Email:</strong> {{ customer_record.email }}<br><br>
+       <strong>Phone Number:</strong> {{ customer_record.phone_number }}<br><br>
+       <strong>Address:</strong> {{ customer_record.address }}<br><br>
+       <strong>City:</strong> {{ customer_record.city }}<br><br>
+       <strong>State:</strong> {{ customer_record.state }}<br><br>
+       <strong>Zip Code:</strong> {{ customer_record.zip_code }}<br><br>
+       <strong>Created At:</strong> {{ customer_record.created_at }}<br><br>
+       <strong>ID:</strong> {{customer_record.id}}<br><br>
+    </p>
+    </div>
+  </div>
+<br>
+
+<a href="{% url 'website:home' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'website:delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
+
 
     
-    {{ customer_record.email }}<br>
-    {{ customer_record.phone_number }}<br>
-    {{ customer_record.address }}<br>
-    {{ customer_record.city }}<br>
-    {{ customer_record.state }}<br>
-    {{ customer_record.zip_code }}<br>
-    {{ customer_record.created_at }}<br>
-    {{customer_record.id}}<br>
+
 
 {% endblock content %}
 

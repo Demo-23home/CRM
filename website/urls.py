@@ -12,4 +12,5 @@ urlpatterns = [
     path('logout/',user_logout,name='logout'),
     path('register/',register,name='register'),
     path('record/<int:pk>',customer_record,name='customer_record'),
+    path('delete/<int:pk>',delete_record,name='delete_record'),
 ]
