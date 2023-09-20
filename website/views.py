@@ -108,4 +108,20 @@ def add_record(request):
     else:
         messages.success(request, "You Must Be logged In to Delte this Record")
         return redirect('website:home')
-    
+
+
+
+
+
+def update_record(request, pk):
+    if request.user.is_authenticated:
+        current_record = Record.objects.get(id=pk)
+        form = AddRecord(request.POST or None, instance=current_record)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your Record Has Been Updated!...")
+            return redirect('website:home')
+        return render(request, 'website/update_record.html',{'form':form})
+    else:
+        messages.success(request, "You Must Be logged In to Delte this Record")
+        return redirect('website:home') 

@@ -13,5 +13,6 @@ urlpatterns = [
     path('register/',register,name='register'),
     path('record/<int:pk>',customer_record,name='customer_record'),
     path('delete/<int:pk>',delete_record,name='delete_record'),
+    path('update/<int:pk>',update_record,name='update_record'),
     path('new/', add_record, name='add_record'),
 ]
