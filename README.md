@@ -15,20 +15,30 @@ CRM is a lightweight Customer Relationship Management system built with Django. 
    ```sh
    git clone https://github.com/Demo-23home/CRM.git
    
-1.Install Dependencies:
+2.**Install Dependencies:**
+
+```sh
   pip install -r requirements.txt
+```
+3.**Database Migration**:
 
-2.Database Migration:
+```sh
   python manage.py migrate
+```
 
-3.Run the Development Server:
+4.**Run the Development Server**:
+
+```sh
   python manage.py runserver
+```
 
-Access the CRM Application:
+5.**Access the CRM Application:**
 
+```sh
 Open your web browser and go to http://localhost:8000/
+```
 
-4.Usage
+4.**Usage**
 Customer Management: Add and manage your customer data through the user-friendly interface.
 Contributing
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
